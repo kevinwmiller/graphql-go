@@ -161,8 +161,9 @@ func (b *execBuilder) makeExec(t common.Type, resolverType reflect.Type) (Resolv
 		return b.makeObjectExec(t.Name, nil, t.PossibleTypes, nonNull, resolverType)
 	}
 
-	if !nonNull {
-		if resolverType.Kind() != reflect.Ptr && resolverType.Kind() != reflect.Slice {
+	// TODO: This should check for any nullable type
+	if !nonNull && resolverType.Kind() != reflect.Slice {
+		if resolverType.Kind() != reflect.Ptr {
 			return nil, fmt.Errorf("%s is not a pointer", resolverType)
 		}
 		resolverType = resolverType.Elem()

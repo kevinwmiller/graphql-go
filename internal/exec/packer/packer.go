@@ -77,7 +77,8 @@ func (b *Builder) assignPacker(target *packer, schemaType common.Type, reflectTy
 
 func (b *Builder) makePacker(schemaType common.Type, reflectType reflect.Type) (packer, error) {
 	t, nonNull := unwrapNonNull(schemaType)
-	if !nonNull {
+	// TODO: This should check for any nullable type
+	if !nonNull && reflectType.Kind() != reflect.Slice {
 		if reflectType.Kind() != reflect.Ptr {
 			return nil, fmt.Errorf("%s is not a pointer", reflectType)
 		}
