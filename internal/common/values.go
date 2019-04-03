@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/kevinwmiller/graphql-go/errors"
+	"github.com/graph-gophers/graphql-go/errors"
 )
 
 // http://facebook.github.io/graphql/draft/#InputValueDefinition

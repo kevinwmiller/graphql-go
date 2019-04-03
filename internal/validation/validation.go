@@ -8,10 +8,10 @@ import (
 	"strings"
 	"text/scanner"
 
-	"github.com/kevinwmiller/graphql-go/errors"
-	"github.com/kevinwmiller/graphql-go/internal/common"
-	"github.com/kevinwmiller/graphql-go/internal/query"
-	"github.com/kevinwmiller/graphql-go/internal/schema"
+	"github.com/graph-gophers/graphql-go/errors"
+	"github.com/graph-gophers/graphql-go/internal/common"
+	"github.com/graph-gophers/graphql-go/internal/query"
+	"github.com/graph-gophers/graphql-go/internal/schema"
 )
 
 type varSet map[*common.InputValue]struct{}
